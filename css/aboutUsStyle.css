@@ -1,0 +1,4 @@
+html, body{
+	background: url("img/aboutUsBackground.jpg") no-repeat fixed center;
+	background-size: cover;
+}
