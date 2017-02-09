@@ -2,3 +2,12 @@ html, body{
 	background: url("img/aboutUsBackground.jpg") no-repeat fixed center;
 	background-size: cover;
 }
+.info{
+	float: right;
+	font-size: 16px;
+	background-color: rgba(77, 77, 77, 0.7);
+	padding: 15px 10px 15px 10px;
+	margin: 5%;
+	border: 3px dashed white;
+	border-radius: 25px;
+}

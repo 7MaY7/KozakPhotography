@@ -1,8 +1,22 @@
 html, body{
-  background-color: rgb(242, 242, 242);
+  background: url("img/background.jpg") no-repeat fixed center;
+  background-size: cover;
 }
 
-.album{
-	margin-bottom: 50px;
-	max-height: 223px;
+.thumbnail{
+	background-color: rgba(77, 77, 77, 0.7);
+	margin-top: 5px;
+	padding: 0;
+	border: 1px solid rgba(77, 77, 77, 0.1);
+	border-radius: 10px;
+}
+
+.thumbnail h5{
+	padding-left: 10px;
+
+}
+
+.album img{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
