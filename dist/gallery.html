@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html  class="gallery" ng-app = "gallery">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Gallery</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+</head>
+
+<body class="gallery">
+	<div class="preloadWrap">
+		<div class="preloder">
+			<div class="preloder"></div>
+		</div>
+	</div>
+
+<div id="wrapper">
+	<div id="content">
+	<header>
+		<nav class="navbar navbar-inverse">
+		  	<div class="container">
+		    	<div class="navbar-header">
+		     	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>                        
+		      	</button>
+				<a class="navbar-brand" href="index.html" style="color: white">KozakPhotography</a>
+		    	</div>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			    	<ul class="nav navbar-nav">
+						<li><a href="aboutUs.html">About us</a></li>
+						<li><a href="#">Gallery</a></li>
+						<li><a href="contacts.html">Contacts</a></li>
+					</ul>
+		    	</div>
+			</div>
+		</nav>		
+	</header>
+	<div class="container">
+		<div class="row">
+		    <h1>Gallery</h1>
+			<hr>
+
+			<div class="row albums" ng-controller="GalleryCtrl as gall">
+      			<div class="album col-12 col-md-4 col-sm-6" ng-repeat="albumTitlePhoto in gall.albumTitlePhoto">
+					<a title="{{albumTitlePhoto.name}}" href=""> 
+						<div class="thumbnail">
+							<img id="{{albumTitlePhoto.id}}" ng-src="{{albumTitlePhoto.img}}" alt="{{albumTitlePhoto.name}}">
+							<h5>{{albumTitlePhoto.name}}</h5>
+						</div>
+					</a>
+				</div>
+    		</div>
+		<hr>
+    	</div>
+
+		<div class="hidden" id="img-repo" ng-controller="GalleryCtrl as gall">
+			<!-- #images -->
+			<div class="item" id="{{albumPhoto.id}}" ng-repeat="albumPhoto in gall.albumPhoto">
+				<img class="img-responsive" title="{{albumPhoto.title}}" ng-src="{{albumPhoto.img}}" alt="{{albumPhoto.title}}">
+			</div>    
+		</div>
+
+		<div class="modal" id="modal-gallery" role="dialog" >
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				
+					<div class="modal-body">
+						<div id="modal-carousel" class="carousel">
+						   
+						<div class="carousel-inner"></div>
+						            
+						<a class="carousel-control left" href="#modal-carousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+						<a class="carousel-control right" href="#modal-carousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<footer>
+		<div class="container">
+			<a href="https://maksymiv.000webhostapp.com/#" target="_blank"  class="navbar-text pull-left">
+				<p>&copy; 2017 Maksymiv A.</p>
+			</a>
+			<a href="tel:+380632448131" class="navbar-text pull-right">
+				<i class="fa fa-phone"> +38 (063) 244 8131</i>
+			</a>
+			<a href="mailto:photokool@ukr.net" target="_blank" class="navbar-text pull-right">
+				<i class="fa fa-envelope"> photokool@ukr.net</i>
+			</a> 
+		</div>  
+	</footer>
+
+	<link rel="stylesheet" href="css/main.min.css">
+	
+	<script src="js/scripts.min.js"></script>
+
+</div>
+</body>
+</html>

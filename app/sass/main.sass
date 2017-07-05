@@ -1,0 +1,209 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+
+.main
+	background: url("../img/background.jpg") no-repeat fixed center
+.aboutUs
+	background: url("../img/aboutUsBackground.jpg") no-repeat fixed center
+.gallery
+	background: url("../img/background.jpg") no-repeat fixed center
+.cont
+	background: url("../img/contactsBackground.jpg") no-repeat fixed center
+.main, .aboutUs, .gallery, .cont
+	background-size: cover
+	height: 100%
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+#wrapper
+	display: flex
+	flex-direction: column
+	height: 100%
+
+#content
+	flex: 1 0 auto
+
+//////////////
+//NAVIGATION//
+//////////////
+.navbar
+	background-color: rgba(77, 77, 77, 0.5)
+	margin-bottom: 0
+	border-radius: 0
+	border: none
+	button
+		border: none
+	.navbar-brand
+		font-size: 20px
+	.nav li a
+		color: #fff
+		&:hover
+			color: #ccffff
+
+//////////////
+/* ABOUT US */
+//////////////
+.info
+	float: right
+	background-color: rgba(77, 77, 77, 0.7)
+	padding: 5px 10px 15px 10px
+	margin: 5%
+	border: 3px dashed white
+	border-radius: 25px
+	li
+		font-family: "Open_Sans"
+
+
+
+/////////////
+/* GALLERY */
+/////////////
+.albums .thumbnail
+	background-color: rgba(77, 77, 77, 0.7)
+	margin-top: 5px
+	padding: 0
+	border: 1px solid rgba(77, 77, 77, 0.1)
+	border-radius: 10px
+	h5
+		padding-left: 10px
+		color: white
+	img
+		border-top-left-radius: 10px
+		border-top-right-radius: 10px
+
+.modal
+	text-align: center
+	padding: 0!important
+	&::before
+		content: ''
+		display: inline-block
+		height: 100%
+		vertical-align: middle
+		margin-right: -4px
+	.modal-dialog
+		display: inline-block
+		text-align: left
+		vertical-align: middle
+		.modal-body
+			background-color: gray
+			padding: 0
+
+//////////////
+/* CONTACTS */
+//////////////
+.contacts
+	float: right
+	font-size: 16px
+	background-color: rgba(77, 77, 77, 0.7)
+	padding: 10px 20px 25px 10px
+	margin: 5%
+	border: 3px dashed white
+	border-radius: 25px
+	ul
+		list-style: none
+		li a
+			color: #fff
+			&:hover
+				color: #ccffff
+
+
+
+footer
+	background-color: rgba(77, 77, 77, 0.5)
+	border-radius: 0
+	padding-top: 15px
+	padding-bottom: 15px
+	.container a
+		color: #fff
+		padding-left: 10px
+		margin-bottom: 0px
+		&:hover
+			color: #ccffff
+		&:visited
+			color: #fff
+		.navbar-text
+			margin-top: 0
+			margin-bottom: 0
+
+
+/////////////
+//PRELOADER//
+/////////////
+.preloadWrap
+	background-color:  rgb(77, 77, 77)
+	position: fixed
+	left: 0
+	top: 0
+	width: 100vw
+	height: 100vh
+	z-index: 100
+
+.preloder
+	margin: 300px auto
+	box-sizing: border-box
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	background: linear-gradient(rgba(99, 255, 255, 1) -50%,rgba(99, 255, 255, 0) 60%)
+	animation: roll-r 6s linear infinite
+
+.preloder>.preloder
+	padding: 5px
+	animation: roll-l 2s linear infinite
+
+.preloder>.preloder:after
+	content: ""
+	display: block
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	background:  rgb(77, 77, 77)
+
+
+@keyframes roll-r
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+@keyframes roll-l
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(-360deg)
+
+
+@import "media" // Всегда в конце
